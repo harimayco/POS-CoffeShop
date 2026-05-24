@@ -37,7 +37,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
 
-    <com.baoyz.widget.PullRefreshLayout
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:id="@+id/pullRefres"
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -50,7 +50,7 @@
             android:layout_height="match_parent"
             tools:listitem="@layout/list_menu_item" />
 
-    </com.baoyz.widget.PullRefreshLayout>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabAddMenu"
