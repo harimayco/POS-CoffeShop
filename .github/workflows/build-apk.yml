@@ -40,13 +40,18 @@ jobs:
           yes | sdkmanager --licenses
 
       - name: Create local.properties
+        env:
+          SQL_IP: ${{ secrets.SQL_IP }}
+          SQL_USER: ${{ secrets.SQL_USER }}
+          SQL_DB: ${{ secrets.SQL_DB }}
+          SQL_PASS: ${{ secrets.SQL_PASS }}
         run: |
-          cat >> local.properties << EOF
+          cat > local.properties << EOF
           sdk.dir=$ANDROID_SDK_ROOT
-          ip=${{ secrets.SQL_IP }}
-          user=${{ secrets.SQL_USER }}
-          db=${{ secrets.SQL_DB }}
-          pass=${{ secrets.SQL_PASS }}
+          ip=${SQL_IP:-127.0.0.1}
+          user=${SQL_USER:-sa}
+          db=${SQL_DB:-POS}
+          pass=${SQL_PASS:-changeme}
           EOF
 
       - name: Grant execute permission for gradlew

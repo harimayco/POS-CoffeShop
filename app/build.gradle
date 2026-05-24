@@ -7,6 +7,10 @@ plugins {
     id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'
 }
 
+secrets {
+    propertiesFileName = 'local.properties'
+    defaultPropertiesFileName = 'local.defaults.properties'
+}
 
 android {
     namespace 'com.example.dayeat'
